@@ -1,4 +1,13 @@
+langchain
+langchain-openai
+google-api-python-client
+google-auth
+chardet
+markdown
+
 flask
 flask-cors
 python-dotenv
 gunicorn
+
+
