@@ -1,0 +1,37 @@
+[
+  {
+    "capability": "Inform",
+    "tagline": "Stay Informed, Stay Ahead",
+    "script": "Imagine you're preparing for a major healthcare conference, and you need the latest updates on diabetes care techniques. With the 'Inform' capability of our AI assistant, you can quickly gather and present the most relevant, up-to-date information. Whether it's new research findings, treatment advancements, or dietary recommendations, this tool ensures you're well-prepared and informed. With this capability, reclaim valuable time and focus on providing top-notch care to your patients."
+  },
+  {
+    "capability": "Create & Edit",
+    "tagline": "Craft Perfect Messages, Effortlessly",
+    "script": "Think about the last time you had to send out patient education materials and wished for a quicker way to draft engaging content. The 'Create & Edit' capability of our AI assistant helps you generate and refine educational content, from emails to informative brochures about managing diabetes. It ensures your messages are clear, concise, and medically accurate, boosting your confidence in the material you share and enhancing patient understanding."
+  },
+  {
+    "capability": "Organize",
+    "tagline": "Organize Information, Streamline Care",
+    "script": "Picture a busy day at the clinic with back-to-back patient appointments. The 'Organize' capability can transform your scattered notes into structured care plans and to-do lists. This not only helps in managing patient information efficiently but also ensures that no critical detail is missed in the hustle of the day. Embrace this tool to enhance your workflow and spend more time engaging directly with your patients."
+  },
+  {
+    "capability": "Transform",
+    "tagline": "Adapt Content, Reach Everyone",
+    "script": "Ever needed to explain complex medical terms in simpler language for your patients? The 'Transform' capability lets you adapt your educational materials to match the comprehension levels of different patients, ensuring everyone understands their care regimen perfectly. This tool can be a game-changer in improving patient compliance and outcomes, making your job as an educator and caregiver that much more effective."
+  },
+  {
+    "capability": "Analyze",
+    "tagline": "Uncover Insights, Make Informed Decisions",
+    "script": "Consider the times you've needed to compare the effectiveness of different insulin types. The 'Analyze' capability can assist by generating comparison tables or decision matrices, helping you make evidence-based recommendations to your patients. This not only streamlines your decision-making process but also builds trust with your patients as they see the thorough care put into their treatment plans."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "tagline": "Engage Through Simulation, Enhance Learning",
+    "script": "Imagine training new staff on patient interaction scenarios specific to diabetes care. The 'Personify or Simulate' capability allows you to create realistic patient interaction simulations, enhancing training effectiveness and preparing your team for real-world situations. This tool helps in building a skilled, empathetic team that's ready to provide exceptional care."
+  },
+  {
+    "capability": "Explore & Guide",
+    "tagline": "Explore Possibilities, Guide Actions",
+    "script": "Facing a complex patient case or planning a community diabetes awareness program? The 'Explore & Guide' capability helps you brainstorm solutions, map out strategies, and outline actionable steps. This tool supports you in tackling challenges creatively and confidently, ensuring you're always ready to deliver the best care and education to your community."
+  }
+]

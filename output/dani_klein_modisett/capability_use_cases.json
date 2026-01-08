@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Inform",
+    "name": "Tailored Workshop Content",
+    "scenario": "Jordan needs to prepare a workshop for healthcare providers focusing on stress management techniques. The audience has diverse backgrounds and varying levels of experience with stress management.",
+    "solution": "Jordan provides the AI with details about the audience's demographics and their familiarity with stress management. The AI then gathers and summarizes relevant, up-to-date research and trends in stress management techniques suitable for the diverse group."
+  },
+  {
+    "capability": "Create & Edit",
+    "name": "Engaging Workshop Scripts",
+    "scenario": "Jordan is planning an interactive seminar for corporate employees but struggles to create engaging content that resonates with professionals in a corporate setting.",
+    "solution": "Jordan inputs the seminar's theme and target audience into the AI. The AI assists by generating a draft script with humor and interactive elements designed to engage corporate professionals effectively."
+  },
+  {
+    "capability": "Organize",
+    "name": "Streamlined Workshop Planning",
+    "scenario": "Jordan is overwhelmed with the logistics of organizing simultaneous workshops across different locations for university staff.",
+    "solution": "Jordan feeds the AI with details of each location and the workshop topics. The AI organizes this information into a clear, manageable schedule with timelines and resource allocation for each location."
+  },
+  {
+    "capability": "Transform",
+    "name": "Customized Presentation Formats",
+    "scenario": "Jordan needs to adapt a single workshop's content to suit both in-person and virtual formats for an upcoming family group seminar.",
+    "solution": "Jordan provides the original content to the AI, specifying the two different delivery modes. The AI restructures the content, optimizing it for engaging virtual interaction and in-person delivery."
+  },
+  {
+    "capability": "Analyze",
+    "name": "Impact Measurement Analysis",
+    "scenario": "After a series of workshops, Jordan wants to understand their effectiveness in boosting resilience among participants to improve future sessions.",
+    "solution": "Jordan inputs feedback and survey data from participants into the AI. The AI analyzes the data to identify patterns and provides insights on the workshops' impact, suggesting areas for improvement."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "name": "Role-play Scenario Development",
+    "scenario": "Jordan is designing a training module for emerging entrepreneurs that includes handling difficult customer interactions.",
+    "solution": "Jordan describes the training goal to the AI, which then creates realistic customer service scenarios and dialogues. These simulations help entrepreneurs practice and refine their communication skills."
+  },
+  {
+    "capability": "Explore & Guide",
+    "name": "Strategic Workshop Expansion",
+    "scenario": "Jordan is considering expanding workshop offerings to include more topics on personal development and needs a strategic plan.",
+    "solution": "Jordan outlines the current workshop themes to the AI. The AI proposes a strategic expansion plan, suggesting new topics and a roadmap for integrating them into the existing workshop portfolio."
+  }
+]

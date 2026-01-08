@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Inform",
+    "name": "Stay Updated on Insurance Laws",
+    "scenario": "Martin needs to ensure compliance with new health insurance regulations introduced in Ohio to advise his clients accurately.",
+    "solution": "Martin inputs the query about the latest Ohio health insurance regulations. The AI Assistant provides a concise summary of the new laws, helping him stay informed and reliable."
+  },
+  {
+    "capability": "Create & Edit",
+    "name": "Draft Custom Insurance Plans",
+    "scenario": "Martin must create personalized insurance plans tailored to the unique needs of a new small business client.",
+    "solution": "Martin provides client details and requirements to the AI. The Assistant drafts a customized insurance plan proposal, ensuring all client needs are met efficiently."
+  },
+  {
+    "capability": "Organize",
+    "name": "Streamline Client Data Management",
+    "scenario": "Martin struggles with organizing vast amounts of client data for easy access and reference during consultations.",
+    "solution": "Martin uploads client data files to the AI. The Assistant categorizes and structures the data into an easily navigable format, enhancing retrieval and consultation efficiency."
+  },
+  {
+    "capability": "Transform",
+    "name": "Regulation Updates into Client Briefs",
+    "scenario": "Martin needs to convert complex regulatory updates into understandable client briefs for upcoming meetings.",
+    "solution": "Martin feeds the latest regulatory text to the AI. The Assistant simplifies and formats this into clear, client-friendly briefs that Martin can use directly."
+  },
+  {
+    "capability": "Analyze",
+    "name": "Evaluate Best Insurance Options",
+    "scenario": "Martin wants to compare multiple insurance plans to determine the best options for a family with specific health needs.",
+    "solution": "Martin inputs the details of the plans and family needs. The AI Assistant analyzes and provides a comparison, highlighting the optimal choice based on coverage and cost."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "name": "Simulate Client Interaction Training",
+    "scenario": "Martin prepares for a challenging client meeting and wants to practice his approach to explaining complex insurance concepts.",
+    "solution": "Martin describes the client scenario to the AI. The Assistant simulates the client's responses, allowing Martin to practice and refine his explanations interactively."
+  },
+  {
+    "capability": "Explore & Guide",
+    "name": "Strategize Client Engagement Improvement",
+    "scenario": "Martin aims to enhance client engagement and satisfaction but needs fresh ideas on approaches.",
+    "solution": "Martin asks the AI for innovative client engagement strategies. The Assistant suggests several tailored engagement plans and outlines actionable steps for implementation."
+  }
+]

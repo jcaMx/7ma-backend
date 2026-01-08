@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Inform",
+    "name": "Stay Updated on Diabetes Research",
+    "scenario": "Emily needs to stay abreast of the latest diabetes research to provide the best care. However, she struggles to find time to sift through numerous medical journals and articles.",
+    "solution": "Emily inputs keywords related to recent diabetes studies into the AI Assistant. The tool quickly summarizes the latest research, highlighting key findings and treatment innovations, which Emily can then study or share with her patients."
+  },
+  {
+    "capability": "Create & Edit",
+    "name": "Custom Diabetes Care Plans",
+    "scenario": "Emily must develop personalized care plans for new diabetes patients, each with unique health backgrounds and needs.",
+    "solution": "She provides the AI with patient data and specific health parameters. The AI generates tailored educational content and care plans, which Emily reviews and adjusts before discussing them with her patients."
+  },
+  {
+    "capability": "Organize",
+    "name": "Streamline Patient Education Materials",
+    "scenario": "Emily has an array of patient education materials that are disorganized, making it difficult to locate the right information quickly during consultations.",
+    "solution": "Emily uploads the documents to the AI Assistant, which categorizes and organizes them into an easy-to-navigate library. She can now access specific materials swiftly during patient sessions."
+  },
+  {
+    "capability": "Transform",
+    "name": "Translate Educational Content",
+    "scenario": "Emily serves a diverse population in San Jose, requiring her educational materials to be available in multiple languages.",
+    "solution": "She inputs the English versions of her diabetes management guides into the AI, which then provides accurate translations in various languages, enhancing communication with non-English-speaking patients."
+  },
+  {
+    "capability": "Analyze",
+    "name": "Evaluate Patient Education Effectiveness",
+    "scenario": "Emily wants to assess the effectiveness of her educational programs to ensure they are helping patients manage their diabetes effectively.",
+    "solution": "She feeds patient feedback and program data into the AI, which analyzes the information and generates a report on the strengths and weaknesses of the educational content, suggesting improvements."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "name": "Role-play Patient Scenarios",
+    "scenario": "To better prepare for patient interactions, Emily wants to practice handling difficult conversations and questions about diabetes management.",
+    "solution": "Emily describes challenging scenarios to the AI, which simulates patient responses. This role-playing helps her refine her communication strategies and patient interaction skills."
+  },
+  {
+    "capability": "Explore & Guide",
+    "name": "Develop New Educational Strategies",
+    "scenario": "Emily is considering innovative approaches to diabetes education to increase patient engagement and adherence to treatment plans.",
+    "solution": "She asks the AI to brainstorm alternative educational techniques. The AI suggests incorporating interactive digital tools and gamified learning experiences, providing a detailed action plan for implementation."
+  }
+]

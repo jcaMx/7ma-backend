@@ -1,0 +1,23 @@
+{
+  "user_input": {
+    "name": "Test",
+    "title": "CEO",
+    "company": "7MA",
+    "folder_path": "test",
+    "bio": "Simulated output for bio"
+  },
+  "_diagnostics": [],
+  "_runtime": {
+    "openai_api_key_detected": false,
+    "openai_client_initialized": false,
+    "openai_api_key_fingerprint": null,
+    "model": "gpt-4-turbo",
+    "temperature": 0.2,
+    "output_folder": "C:\\Users\\Acer\\google-slides-generator\\backend\\output\\test"
+  },
+  "bio": "Simulated output for bio",
+  "audience_description": "Simulated output for audience_description",
+  "fictional_profile": "Simulated output for fictional_profile",
+  "capability_scripts": "Simulated output for capability_scripts",
+  "capability_use_cases": "Simulated output for capability_use_cases"
+}
