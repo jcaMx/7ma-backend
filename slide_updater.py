@@ -44,7 +44,7 @@ slide_map = [
         "label": "capability_scenario_create",
         "position": "capability_scenario_inform + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Create & Edit"}},
-        "field_map": {0: "name", 1: "scenario", 2: "solution"}
+        "field_map": {0: "scenario", 1: "solution", 2: "name"}
     },
     {
         "label": "capability_organize",
@@ -57,7 +57,7 @@ slide_map = [
         "label": "capability_scenario_organize",
         "position": "capability_scenario_create + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Organize"}},
-        "field_map": {0: "name", 1: "scenario", 2: "solution"}
+        "field_map": {0: "scenario", 1: "solution", 2: "name"}
     },
     {
         "label": "capability_transform",
@@ -70,7 +70,7 @@ slide_map = [
         "label": "capability_scenario_transform",
         "position": "capability_scenario_organize + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Transform"}},
-        "field_map": {0: "name", 1: "scenario", 2: "solution"}
+        "field_map": {0: "scenario", 1: "solution", 2: "name"}
     },
     {
         "label": "capability_analyze",
@@ -82,8 +82,8 @@ slide_map = [
     {
         "label": "capability_scenario_analyze",
         "position": "capability_scenario_transform + 2",
-        "source": {"collection": "capabilityuse_cases", "match": {"capability": "Analyze"}},
-        "field_map": {0: "name", 1: "scenario", 2: "solution"}
+        "source": {"collection": "capability_use_cases", "match": {"capability": "Analyze"}},
+        "field_map": {0: "scenario", 1: "solution", 2: "name"}
     },
     {
         "label": "capability_personify",
@@ -96,7 +96,7 @@ slide_map = [
         "label": "capability_scenario_personify",
         "position": "capability_scenario_analyze + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Personify or Simulate"}},
-        "field_map": {0: "name", 1: "scenario", 2: "solution"}
+        "field_map": {0: "scenario", 1: "solution", 2: "name"}
     },
     {
         "label": "capability_explore",
@@ -122,8 +122,7 @@ SCOPES = [
 SERVICE_ACCOUNT_FILE = "credentials.json"
 SHARED_DRIVE_ID = os.getenv("SHARED_DRIVE_ID")
 SHARED_DRIVE_FOLDER_ID = os.getenv(
-    "SHARED_DRIVE_FOLDER_ID", "17-A74qdeV002kHXU7xykyBaiacwtm5_t"
-)
+    "SHARED_DRIVE_FOLDER_ID")
 
 
 @lru_cache(maxsize=1)
@@ -715,44 +714,176 @@ def update_slides_prefetched(
     logger.info("Slides updated at %s", final_url)
     return final_url
 
+# ---------- Manual test block ----------
+# Uncomment to run a manual test of slide updates
+# if __name__ == "__main__":
+
+
+
+    # adjust output_dir to point to the folder with your JSON outputs
+    # try:
+    #     output_dir = "output/name"
+    #     audio_folder = os.path.join(output_dir, "audio_files")
+    #     fictional_path = os.path.join(output_dir, "fictional_profile.json")
+    #     capabilities_path = os.path.join(output_dir, "capability_use_cases.json")
+
+    #     if not os.path.exists(fictional_path) or not os.path.exists(capabilities_path):
+    #         logger.error("Required JSON outputs missing in %s", output_dir)
+    #         raise SystemExit(1)
+
+    #     with open(fictional_path, "r", encoding="utf-8") as f:
+    #         fictional_data = json.load(f)
+
+    #     with open(capabilities_path, "r", encoding="utf-8") as f:
+    #         capability_data = json.load(f)
+
+    #     # Normalize content_dict
+    #     content_dict = {
+    #         "fictional_profile": {
+    #             "name": fictional_data.get("name", ""),
+    #             "role": fictional_data.get("role", ""),
+    #             "narrative": fictional_data.get("narrative", "")
+    #         },
+    #         "capability_use_cases": capability_data
+    #     }
+    #     print("📦 content_dict keys:", content_dict.keys())
+
+    #     # Run updates (pass audio folder if you want audio files inserted)
+    #     audio_folder = os.path.join(output_dir, "audio_files")
+    #     demo_presentation_id = os.environ.get("PRESENTATION_ID", "")
+    #     if not demo_presentation_id:
+    #         raise SystemExit("Set PRESENTATION_ID env var to run the manual test block.")
+    #     update_slides(demo_presentation_id, slide_map, content_dict, audio_dir=audio_folder)
+
+    #     logger.info("All done.")
+
+    # except Exception as e:
+        # logger.error(f"❌ Slide update test failed: {e}")
+
+
+
+def inspect_slide_objects(presentation: dict, slide_index: int) -> dict:
+    """
+    Inspect objects on a single slide.
+    - No updates
+    - No recursion
+    - No API calls
+    Returns a structured summary.
+    """
+
+    slides = presentation.get("slides", [])
+    if slide_index < 0 or slide_index >= len(slides):
+        raise IndexError(
+            f"Slide index {slide_index} out of range (total slides: {len(slides)})"
+        )
+
+    slide = slides[slide_index]
+    slide_id = slide.get("objectId")
+
+    print(f"\n🔍 Inspecting slide {slide_index + 1} (Object ID: {slide_id})")
+    print(" --- Elements on slide ---")
+
+    summary = {
+        "slide_index": slide_index,
+        "slide_id": slide_id,
+        "elements": [],
+    }
+
+    for el in slide.get("pageElements", []):
+        element_id = el.get("objectId")
+        element_type = "UNKNOWN"
+        text_content = ""
+
+        if "shape" in el and isinstance(el["shape"], dict):
+            element_type = el["shape"].get("shapeType", "SHAPE")
+            if "text" in el["shape"]:
+                text_content = _get_text_from_shape(el["shape"])
+
+        elif "image" in el:
+            element_type = "IMAGE"
+
+        elif "video" in el:
+            element_type = "VIDEO"
+
+        elif "table" in el:
+            element_type = "TABLE"
+
+        print(
+            f" → ID: {element_id}, "
+            f"Type: {element_type}, "
+            f"Text: '{text_content}'"
+        )
+
+        summary["elements"].append({
+            "object_id": element_id,
+            "type": element_type,
+            "text": text_content,
+        })
+
+    print(f"✅ Total elements found: {len(summary['elements'])}")
+    return summary
+
+def main_inspect_only(
+    presentation_id: str,
+    slide_index: int,
+    credentials_file: str = SERVICE_ACCOUNT_FILE,
+):
+    """
+    Main entry point for inspection only.
+    Calls exactly ONE slide-inspection function.
+    """
+
+    slides_service, _ = get_services(credentials_file)
+
+    presentation = slides_service.presentations().get(
+        presentationId=presentation_id
+    ).execute()
+
+    return inspect_slide_objects(
+        presentation=presentation,
+        slide_index=slide_index,
+    )
+
+def inspect_all_slides(
+    presentation_id: str,
+    credentials_file: str = SERVICE_ACCOUNT_FILE,
+):
+    """
+    Inspect all slides in a presentation.
+    - No recursion
+    - One API fetch
+    - Reuses inspect_slide_objects only
+    """
+
+    slides_service, _ = get_services(credentials_file)
+
+    presentation = slides_service.presentations().get(
+        presentationId=presentation_id
+    ).execute()
+
+    slides = presentation.get("slides", [])
+    results = []
+
+    print(f"\n📊 Inspecting {len(slides)} slides total")
+
+    for index in range(len(slides)):
+        result = inspect_slide_objects(
+            presentation=presentation,
+            slide_index=index,
+        )
+        results.append(result)
+
+    return results
+
+
 # ---------- Main execution ----------
 if __name__ == "__main__":
-    # adjust output_dir to point to the folder with your JSON outputs
-    try:
-        output_dir = "output/name"
-        audio_folder = os.path.join(output_dir, "audio_files")
-        fictional_path = os.path.join(output_dir, "fictional_profile.json")
-        capabilities_path = os.path.join(output_dir, "capability_use_cases.json")
+    PRESENTATION_ID = "1mAU9N-nq3D__cc3Ioxq4jwpap5s5AYt0"
+    
+    all_inspections = inspect_all_slides(PRESENTATION_ID)
 
-        if not os.path.exists(fictional_path) or not os.path.exists(capabilities_path):
-            logger.error("Required JSON outputs missing in %s", output_dir)
-            raise SystemExit(1)
+    # Optional: save for later analysis
+    with open("slide_inspection.json", "w", encoding="utf-8") as f:
+        json.dump(all_inspections, f, indent=2)
 
-        with open(fictional_path, "r", encoding="utf-8") as f:
-            fictional_data = json.load(f)
-
-        with open(capabilities_path, "r", encoding="utf-8") as f:
-            capability_data = json.load(f)
-
-        # Normalize content_dict
-        content_dict = {
-            "fictional_profile": {
-                "name": fictional_data.get("name", ""),
-                "role": fictional_data.get("role", ""),
-                "narrative": fictional_data.get("narrative", "")
-            },
-            "capability_use_cases": capability_data
-        }
-        print("📦 content_dict keys:", content_dict.keys())
-
-        # Run updates (pass audio folder if you want audio files inserted)
-        audio_folder = os.path.join(output_dir, "audio_files")
-        demo_presentation_id = os.environ.get("PRESENTATION_ID", "")
-        if not demo_presentation_id:
-            raise SystemExit("Set PRESENTATION_ID env var to run the manual test block.")
-        update_slides(demo_presentation_id, slide_map, content_dict, audio_dir=audio_folder)
-
-        logger.info("All done.")
-
-    except Exception as e:
-        logger.error(f"❌ Slide update test failed: {e}")
+    print("\n✅ Inspection complete. Output saved to slide_inspection.json")

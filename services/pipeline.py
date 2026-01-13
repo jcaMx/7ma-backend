@@ -97,20 +97,29 @@ def run_full_pipeline(request_id: str, payload: dict):
 
         print("✅ Job status updated to:", jobs[request_id]["status"])
 
-                # Step 5: Deliver result (email / app / both)
+        # Step 5: Deliver result (email / app / both)
         email = jobs[request_id].get("email")
-
-    
+        print(f"📧 Email delivery check - RESULT_DELIVERY_MODE: {RESULT_DELIVERY_MODE}, email: {email}")
+        
         if RESULT_DELIVERY_MODE in ("email", "both") and email:
+            print(f"📧 Attempting to send email to {email}")
             try:
                 send_email(
                     to=email,
                     body=slides_url,
                 )
                 logger.info(f"📧 Slides emailed to {email}")
+                print(f"✅ Email sent successfully to {email}")
             except Exception as email_err:
                 # Email failure should NOT fail the job
-                logger.exception("❌ Failed to send email")
+                error_msg = f"❌ Failed to send email: {email_err}"
+                logger.exception(error_msg)
+                print(error_msg)
+        else:
+            if not email:
+                print("⚠️ Email not sent: no email address provided")
+            elif RESULT_DELIVERY_MODE not in ("email", "both"):
+                print(f"⚠️ Email not sent: RESULT_DELIVERY_MODE is '{RESULT_DELIVERY_MODE}' (not 'email' or 'both')")
 
 
 

@@ -12,9 +12,39 @@ EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_FROM = os.getenv("EMAIL_FROM", EMAIL_USER)
 
+REQUIRED = [
+    "EMAIL_HOST",
+    "EMAIL_PORT",
+    "EMAIL_USER",
+    "EMAIL_PASSWORD",
+    "EMAIL_FROM",
+]
+
+
 def send_email(to: str, body: str):
+    """
+    Send an email with the slides URL.
+    Raises RuntimeError if email environment variables are not configured.
+    """
+    # Validate email configuration at runtime (not at import time)
+    # This allows the module to be imported even if email is not configured
+    missing_vars = [v for v in REQUIRED if not os.getenv(v)]
+    if missing_vars:
+        raise RuntimeError(
+            f"Email configuration missing. Required environment variables not set: {', '.join(missing_vars)}. "
+            f"Please configure email settings in your Render environment variables."
+        )
+    
+    # Get fresh values in case they were set after import
+    email_host = os.getenv("EMAIL_HOST")
+    email_port = int(os.getenv("EMAIL_PORT", 587))
+    email_user = os.getenv("EMAIL_USER")
+    email_password = os.getenv("EMAIL_PASSWORD")
+    email_from = os.getenv("EMAIL_FROM", email_user)
+    
+    
     msg = MIMEMultipart()
-    msg['From'] = EMAIL_FROM
+    msg['From'] = email_from
     msg['To'] = to
     msg['Subject'] = "Your 7MA Presentation is Ready"
 
@@ -70,17 +100,20 @@ def send_email(to: str, body: str):
     msg.attach(MIMEText(html_body, 'html'))
     
     try:
-        with smtplib.SMTP(EMAIL_HOST, EMAIL_PORT) as server:
+        with smtplib.SMTP(email_host, email_port, timeout=10) as server:
+            server.ehlo()
             server.starttls()
-            server.login(EMAIL_USER, EMAIL_PASSWORD)
+            server.ehlo()
+            server.login(email_user, email_password)
             server.send_message(msg)
         print(f"✅ Email sent successfully to {to}")
     except Exception as e:
         print(f"❌ Failed to send email: {e}")
+        raise  # Re-raise so the caller can handle it
 
 if __name__ == "__main__":
     print("Testing email sending...")
-    print("Using SMTP server:", EMAIL_HOST)
+    print("Using SMTP server:", os.getenv("EMAIL_HOST"))
 
     send_email(
-        to="charles@digitalmixology.com", body="https://docs.google.com/presentation/d/1f-1pFFoRH8ZMxb3uZ4MGwVL2YtgFy7ZiwbdogMwBeas/preview")
+        to="jericca@digitalmixology.com", body="https://docs.google.com/presentation/d/1f-1pFFoRH8ZMxb3uZ4MGwVL2YtgFy7ZiwbdogMwBeas/preview")
