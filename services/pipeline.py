@@ -5,7 +5,7 @@ from content_generator import run_pipeline, sanitize_filename
 from audio_generator import generate_tts_audio_from_file
 from slide_updater import update_slides, slide_map  # if needed
 import os
-from services.email_utils import send_email
+from services.email_utils import send_email_api
 import logging
 from config import RESULT_DELIVERY_MODE
 
@@ -104,7 +104,7 @@ def run_full_pipeline(request_id: str, payload: dict):
         if RESULT_DELIVERY_MODE in ("email", "both") and email:
             print(f"📧 Attempting to send email to {email}")
             try:
-                send_email(
+                send_email_api(
                     to=email,
                     body=slides_url,
                 )

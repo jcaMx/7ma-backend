@@ -3,6 +3,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 from dotenv import load_dotenv
+import requests
+
 
 load_dotenv()
 
@@ -12,16 +14,115 @@ EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_FROM = os.getenv("EMAIL_FROM", EMAIL_USER)
 
+# REQUIRED = [
+#     "EMAIL_HOST",
+#     "EMAIL_PORT",
+#     "EMAIL_USER",
+#     "EMAIL_PASSWORD",
+#     "EMAIL_FROM",
+# ]
+
+
+MAILJET_API_KEY = os.getenv("MAILJET_API_KEY")
+MAILJET_SECRET_KEY = os.getenv("MAILJET_SECRET_KEY")
+MAILJET_FROM_EMAIL = os.getenv("MAILJET_FROM_EMAIL")
+MAILJET_FROM_NAME = os.getenv("MAILJET_FROM_NAME", "Digital Mixology")
+
 REQUIRED = [
-    "EMAIL_HOST",
-    "EMAIL_PORT",
-    "EMAIL_USER",
-    "EMAIL_PASSWORD",
-    "EMAIL_FROM",
+    "MAILJET_API_KEY",
+    "MAILJET_SECRET_KEY",
+    "MAILJET_FROM_EMAIL",
 ]
 
+for v in REQUIRED:
+    if not os.getenv(v):
+        raise RuntimeError(f"Missing env var: {v}")
 
-def send_email(to: str, body: str):
+
+def send_email_api(to_email: str, body: str):
+    html_body = f"""
+      <html>
+        <body style="margin:0; padding:0; background-color:#f4f6f8; font-family:Arial, Helvetica, sans-serif;">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="center" style="padding:40px 20px;">
+                <table width="100%" max-width="600" cellpadding="0" cellspacing="0"
+                      style="background-color:#ffffff; border-radius:8px; padding:30px;">
+                  
+                  <tr>
+                    <td style="text-align:center; padding-bottom:20px;">
+                      <h2 style="margin:0; color:#072338;">
+                        7MA Presentation Generator
+                      </h2>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td style="color:#333333; font-size:16px; line-height:1.6;">
+                      <p style="margin-top:0;">
+                        Hello,
+                      </p>
+
+                      <p>
+                        Your <strong>7MA presentation</strong> has been prepared and is now available to <a href="{body}">view here</a>.
+                      </p>
+
+                      
+
+                      <p style="margin-top:30px;">
+                        Best regards,<br>
+                        Digital Mixology
+                      </p>
+                    </td>
+                  </tr>
+
+                </table>
+
+                <p style="font-size:12px; color:#888888; margin-top:20px;">
+                  This is an automated message. Please do not reply.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </body>
+      </html>
+      """
+
+    payload = {
+        "Messages": [
+            {
+                "From": {
+                    "Email": MAILJET_FROM_EMAIL,
+                    "Name": MAILJET_FROM_NAME,
+                },
+                "To": [
+                    {
+                        "Email": to_email,
+                    }
+                ],
+                "Subject": "Your 7MA Presentation is Ready",
+                "HTMLPart": html_body,
+            }
+        ]
+    }
+
+    response = requests.post(
+        "https://api.mailjet.com/v3.1/send",
+        auth=(MAILJET_API_KEY, MAILJET_SECRET_KEY),
+        json=payload,
+        timeout=10,
+    )
+
+    if response.status_code != 200:
+        raise RuntimeError(
+            f"Mailjet API error {response.status_code}: {response.text}"
+        )
+
+    print(f"✅ Mailjet email sent to {to_email}")
+
+
+
+def send_email_smtp(to: str, body: str):
     """
     Send an email with the slides URL.
     Raises RuntimeError if email environment variables are not configured.
@@ -113,7 +214,3 @@ def send_email(to: str, body: str):
 
 if __name__ == "__main__":
     print("Testing email sending...")
-    print("Using SMTP server:", os.getenv("EMAIL_HOST"))
-
-    send_email(
-        to="jericca@digitalmixology.com", body="https://docs.google.com/presentation/d/1f-1pFFoRH8ZMxb3uZ4MGwVL2YtgFy7ZiwbdogMwBeas/preview")
