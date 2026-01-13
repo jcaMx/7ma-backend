@@ -105,7 +105,7 @@ def run_full_pipeline(request_id: str, payload: dict):
             print(f"📧 Attempting to send email to {email}")
             try:
                 send_email_api(
-                    to=email,
+                    to_email=email,
                     body=slides_url,
                 )
                 logger.info(f"📧 Slides emailed to {email}")

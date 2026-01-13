@@ -44,7 +44,7 @@ slide_map = [
         "label": "capability_scenario_create",
         "position": "capability_scenario_inform + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Create & Edit"}},
-        "field_map": {0: "scenario", 1: "solution", 2: "name"}
+        "field_map": {0: "name", 1: "scenario", 2: "solution"}
     },
     {
         "label": "capability_organize",
@@ -57,7 +57,7 @@ slide_map = [
         "label": "capability_scenario_organize",
         "position": "capability_scenario_create + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Organize"}},
-        "field_map": {0: "scenario", 1: "solution", 2: "name"}
+        "field_map": {0: "name", 1: "scenario", 2: "solution"}
     },
     {
         "label": "capability_transform",
@@ -70,7 +70,7 @@ slide_map = [
         "label": "capability_scenario_transform",
         "position": "capability_scenario_organize + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Transform"}},
-        "field_map": {0: "scenario", 1: "solution", 2: "name"}
+        "field_map": {0: "name", 1: "scenario", 2: "solution"}
     },
     {
         "label": "capability_analyze",
@@ -83,7 +83,7 @@ slide_map = [
         "label": "capability_scenario_analyze",
         "position": "capability_scenario_transform + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Analyze"}},
-        "field_map": {0: "scenario", 1: "solution", 2: "name"}
+        "field_map": {0: "name", 1: "scenario", 2: "solution"}
     },
     {
         "label": "capability_personify",
@@ -96,7 +96,7 @@ slide_map = [
         "label": "capability_scenario_personify",
         "position": "capability_scenario_analyze + 2",
         "source": {"collection": "capability_use_cases", "match": {"capability": "Personify or Simulate"}},
-        "field_map": {0: "scenario", 1: "solution", 2: "name"}
+        "field_map": {0: "name", 1: "scenario", 2: "solution"}
     },
     {
         "label": "capability_explore",
