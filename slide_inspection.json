@@ -186,17 +186,17 @@
       {
         "object_id": "g36bad6684b2_0_8",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n\n\n\n\n"
+        "text": "Jordan needs to prepare a workshop for healthcare providers focusing on stress management techniques. The audience has diverse backgrounds and varying levels of experience with stress management.\n"
       },
       {
         "object_id": "g36bad6684b2_0_9",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan provides the AI with details about the audience's demographics and their familiarity with stress management. The AI then gathers and summarizes relevant, up-to-date research and trends in stress management techniques suitable for the diverse group.\n"
       },
       {
         "object_id": "g36bad6684b2_0_10",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_TITLE>\n"
+        "text": "Tailored Workshop Content\n"
       }
     ]
   },
@@ -228,17 +228,17 @@
       {
         "object_id": "g36bad6684b2_0_14",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n"
+        "text": "Jordan is planning an interactive seminar for corporate employees but struggles to create engaging content that resonates with professionals in a corporate setting.\n"
       },
       {
         "object_id": "g36bad6684b2_0_15",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan inputs the seminar's theme and target audience into the AI. The AI assists by generating a draft script with humor and interactive elements designed to engage corporate professionals effectively.\n"
       },
       {
         "object_id": "g36bad6684b2_0_16",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_TITLE>\n"
+        "text": "Engaging Workshop Scripts\n"
       }
     ]
   },
@@ -270,17 +270,17 @@
       {
         "object_id": "g36bad6684b2_0_20",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n"
+        "text": "Jordan is overwhelmed with the logistics of organizing simultaneous workshops across different locations for university staff.\n"
       },
       {
         "object_id": "g36bad6684b2_0_21",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan feeds the AI with details of each location and the workshop topics. The AI organizes this information into a clear, manageable schedule with timelines and resource allocation for each location.\n"
       },
       {
         "object_id": "g36bad6684b2_0_22",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_TITLE>\n"
+        "text": "Streamlined Workshop Planning\n"
       }
     ]
   },
@@ -312,17 +312,17 @@
       {
         "object_id": "g36bad6684b2_0_26",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n"
+        "text": "Jordan needs to adapt a single workshop's content to suit both in-person and virtual formats for an upcoming family group seminar.\n"
       },
       {
         "object_id": "g36bad6684b2_0_27",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan provides the original content to the AI, specifying the two different delivery modes. The AI restructures the content, optimizing it for engaging virtual interaction and in-person delivery.\n"
       },
       {
         "object_id": "g36bad6684b2_0_28",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_TITLE>\n"
+        "text": "Customized Presentation Formats\n"
       }
     ]
   },
@@ -354,17 +354,17 @@
       {
         "object_id": "g36bad6684b2_0_32",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n"
+        "text": "After a series of workshops, Jordan wants to understand their effectiveness in boosting resilience among participants to improve future sessions.\n"
       },
       {
         "object_id": "g36bad6684b2_0_33",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan inputs feedback and survey data from participants into the AI. The AI analyzes the data to identify patterns and provides insights on the workshops' impact, suggesting areas for improvement.\n"
       },
       {
         "object_id": "g36bad6684b2_0_34",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_TITLE>\n"
+        "text": "Impact Measurement Analysis\n"
       }
     ]
   },
@@ -396,17 +396,17 @@
       {
         "object_id": "g36bad6684b2_0_38",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n"
+        "text": "Jordan is designing a training module for emerging entrepreneurs that includes handling difficult customer interactions.\n"
       },
       {
         "object_id": "g36bad6684b2_0_39",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan describes the training goal to the AI, which then creates realistic customer service scenarios and dialogues. These simulations help entrepreneurs practice and refine their communication skills.\n"
       },
       {
         "object_id": "g36bad6684b2_0_40",
         "type": "TEXT_BOX",
-        "text": "Role-play Scientific Debates\n"
+        "text": "Role-play Scenario Development\n"
       }
     ]
   },
@@ -438,17 +438,17 @@
       {
         "object_id": "g36bad6684b2_0_44",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SCENARIO>\n"
+        "text": "Jordan is considering expanding workshop offerings to include more topics on personal development and needs a strategic plan.\n"
       },
       {
         "object_id": "g36bad6684b2_0_45",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_SOLUTION>\n"
+        "text": "Jordan outlines the current workshop themes to the AI. The AI proposes a strategic expansion plan, suggesting new topics and a roadmap for integrating them into the existing workshop portfolio.\n"
       },
       {
         "object_id": "g36bad6684b2_0_46",
         "type": "TEXT_BOX",
-        "text": "<USE_CASE_TITLE>\n"
+        "text": "Strategic Workshop Expansion\n"
       }
     ]
   },

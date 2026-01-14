@@ -17,7 +17,7 @@ logger = logging.getLogger("slide-updater")
 slide_map = [
     {
         "label": "fictional_profile",
-        "position": 3, #slide 3
+        "position": 4, #slide 4
         "source": "fictional_profile",
         "field_map": {0: "narrative", 1: "name", 2: "role"}
     },
@@ -878,7 +878,7 @@ def inspect_all_slides(
 
 # ---------- Main execution ----------
 if __name__ == "__main__":
-    PRESENTATION_ID = "1mAU9N-nq3D__cc3Ioxq4jwpap5s5AYt0"
+    PRESENTATION_ID = "here"
     
     all_inspections = inspect_all_slides(PRESENTATION_ID)
 
