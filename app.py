@@ -4,25 +4,48 @@ import threading, uuid
 from services.jobs import jobs, jobs_lock
 from services.pipeline import run_full_pipeline
 
+pipeline_locks = {}
+pipeline_lock = threading.Lock()
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 @app.post("/api/presentation")
 def create_presentation():
     data = request.get_json(force=True, silent=True) or {}
+    email = data.get("email")
+
+    if not email:
+        return jsonify({"error": "Email is required"}), 400
+
     request_id = f"req_{uuid.uuid4().hex[:8]}"
 
+     # ---- DUPLICATE REQUEST GUARD ----
+    with pipeline_lock:
+        if pipeline_locks.get(email):
+            return jsonify({
+                "error": "Presentation already generating"
+            }), 409
+        pipeline_locks[email] = True
+    # --------------------------------
+    
     with jobs_lock:
-        job = jobs.get(request_id) or {}
-        job["status"] = "processing"
-        job["slides_url"] = None
-        
-        job["error"] = None
-        jobs[request_id] = job
+        jobs[request_id] = {
+            "status": "processing",
+            "slides_url": None,
+            "error": None
+        }
+
+    def run():
+        try:
+            run_full_pipeline(request_id, data)
+        finally:
+            # ✅ RELEASE LOCK NO MATTER WHAT
+            with pipeline_lock:
+                pipeline_locks.pop(email, None)
 
     threading.Thread(
-        target=run_full_pipeline,
-        args=(request_id, data),
+        target=run,   
         daemon=True
     ).start()
 
