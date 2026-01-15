@@ -15,6 +15,12 @@ logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 logger = logging.getLogger("slide-updater")
 
 slide_map = [
+ {
+        "label": "user_input",
+        "position": 1, #slide 1
+        "source": "user_input",
+        "field_map": {3: "name", 4: "title"}
+    },
     {
         "label": "fictional_profile",
         "position": 4, #slide 4
@@ -112,6 +118,15 @@ slide_map = [
         "field_map": {0: "name", 1: "scenario", 2: "solution"}
     }
 ]
+
+PLACEHOLDER_TOKENS = {
+    "name": "<NAME>",
+    "role": "<ROLE>",
+    "narrative": "<PROFILE>",
+    "title": "<USE_CASE_TITLE>",
+    "scenario": "<USE_CASE_SCENARIO>",
+    "solution": "<USE_CASE_SOLUTION>"
+}
 
 
 # --- Authentication Setup ---
@@ -382,6 +397,10 @@ def _upload_file_to_drive(
     )
     return file.get("id")
 
+    def is_master_placeholder(shape):
+        return shape.get("placeholder") is not None
+
+
 # ---------- Main update function ----------
 def update_slide_text_fields(
     *,
@@ -507,6 +526,7 @@ def update_slide_text_fields(
             }
         })
         any_replacement = True
+
 
 
     # Execute text updates if any
@@ -878,7 +898,7 @@ def inspect_all_slides(
 
 # ---------- Main execution ----------
 if __name__ == "__main__":
-    PRESENTATION_ID = "here"
+    PRESENTATION_ID = "1smmN1_gySaIeIFBNicYgqQbN-_gwcd8F7MgQ9LKvr5E"
     
     all_inspections = inspect_all_slides(PRESENTATION_ID)
 

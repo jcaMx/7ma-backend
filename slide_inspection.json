@@ -16,7 +16,7 @@
       {
         "object_id": "g36b72ac01aa_0_5",
         "type": "TEXT_BOX",
-        "text": "Prepared for:\n<NAME>\n<ROLE>\n"
+        "text": "Prepared for:\n"
       },
       {
         "object_id": "g36b72ac01aa_0_15",
@@ -52,6 +52,16 @@
         "object_id": "g36b72ac01aa_0_22",
         "type": "IMAGE",
         "text": ""
+      },
+      {
+        "object_id": "g3ba5b935e12_0_0",
+        "type": "TEXT_BOX",
+        "text": "<NAME>\n"
+      },
+      {
+        "object_id": "g3ba5b935e12_0_1",
+        "type": "TEXT_BOX",
+        "text": "<ROLE>\n"
       }
     ]
   },
@@ -144,17 +154,17 @@
       {
         "object_id": "g3a71fd625ca_0_11",
         "type": "TEXT_BOX",
-        "text": "<PROFILE>\n"
+        "text": "Jordan Ellis serves as an Inspirational Coach and Workshop Leader at EmpowerLift Communications, a company dedicated to fostering resilience and positivity through engaging workshops and seminars. Jordan specializes in empowering diverse groups such as emerging entrepreneurs, healthcare providers, corporate employees, university staff, and family groups, using humor and interactive activities to enhance connectivity and manage stress. Common challenges in this role include tailoring content to diverse audience needs, maintaining high engagement in large groups, and effectively measuring the impact of workshops. These challenges require dynamic content creation and efficient organizational strategies, areas where AI tools can provide significant support. Working with Digital Mixology, Jordan has integrated AI Assistants to streamline workshop planning and personalize content delivery, significantly enhancing participant engagement and overall workshop effectiveness.\n"
       },
       {
         "object_id": "g3a71fd625ca_0_23",
         "type": "TEXT_BOX",
-        "text": "<NAME>\n"
+        "text": "Jordan Ellis\n"
       },
       {
         "object_id": "g3a71fd625ca_0_41",
         "type": "TEXT_BOX",
-        "text": "<ROLE>\n"
+        "text": "Inspirational Coach and Workshop Leader\n"
       }
     ]
   },

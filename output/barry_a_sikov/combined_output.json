@@ -1,10 +1,11 @@
 {
   "user_input": {
     "name": "Barry A Sikov",
-    "title": "President and CEO",
+    "email": "jericca@digitalmixology.com",
+    "title": "CEO",
     "company": "BELAIR INSURANCE SERVICES INC.",
     "gender": "Male",
-    "bio": " Barry and his 5 fully Licensed Client Services Representatives have been helping Individuals, Families, Small Businesses and Seniors find and enroll in the best possible Health Insurance Plan at the most reasonable price.",
+    "bio": "Barry and his 5 fully Licensed Client Services Representatives have been helping Individuals",
     "notes": "",
     "folder_path": "barry_a_sikov"
   },
@@ -15,9 +16,9 @@
     "openai_api_key_fingerprint": "sk-p...ecEA",
     "model": "gpt-4-turbo",
     "temperature": 0.2,
-    "output_folder": "C:\\Users\\Acer\\google-slides-generator\\backend\\output\\barry_a_sikov"
+    "output_folder": "D:\\Projects\\VS CODE PROJECTS\\7ma-backend\\output\\barry_a_sikov"
   },
-  "bio": " Barry and his 5 fully Licensed Client Services Representatives have been helping Individuals, Families, Small Businesses and Seniors find and enroll in the best possible Health Insurance Plan at the most reasonable price.",
+  "bio": "Barry and his 5 fully Licensed Client Services Representatives have been helping Individuals",
   "audience_description": {
     "gender": "Male",
     "role": "Barry has been leading a team of five licensed client services representatives for 31 years, focusing on assisting individuals, families, small businesses, and seniors in selecting the most suitable and cost-effective health insurance plans. His role involves guiding clients through the complexities of insurance policies, ensuring they understand their options and receive the best possible coverage.",
