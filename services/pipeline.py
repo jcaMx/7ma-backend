@@ -85,7 +85,7 @@ def run_full_pipeline(request_id: str, payload: dict):
             slide_map,
             result,
             audio_dir=output_dir + "/audio_files",
-            create_new_presentation=False
+            create_new_presentation=True
         )
         print("✅ Slides updated to:", slides_url)
 

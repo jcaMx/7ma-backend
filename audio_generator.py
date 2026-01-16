@@ -5,6 +5,7 @@ import re
 from dataclasses import dataclass
 from typing import Iterable, List, Optional
 
+
 import chardet
 import openai
 

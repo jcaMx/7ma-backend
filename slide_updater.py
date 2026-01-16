@@ -9,6 +9,10 @@ from typing import Optional
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
+
 
 # ---------- Config / logging ----------
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
@@ -129,28 +133,81 @@ PLACEHOLDER_TOKENS = {
 }
 
 
+
+
+
 # --- Authentication Setup ---
 SCOPES = [
     "https://www.googleapis.com/auth/presentations",
     "https://www.googleapis.com/auth/drive"
 ]
 SERVICE_ACCOUNT_FILE = "credentials.json"
+# OAuth (NEW)
+OAUTH_CLIENT_SECRET_FILE = "client_secret.json"
+OAUTH_TOKEN_FILE = "token.json"
+
 SHARED_DRIVE_ID = os.getenv("SHARED_DRIVE_ID")
 SHARED_DRIVE_FOLDER_ID = os.getenv(
     "SHARED_DRIVE_FOLDER_ID")
 
+# Toggle auth mode here
+USE_OAUTH = True  # 👈 switch this ON
+
+def get_oauth_credentials():
+    """Authorize user via OAuth 2.0 and cache token."""
+    creds = None
+
+    if os.path.exists(OAUTH_TOKEN_FILE):
+        creds = Credentials.from_authorized_user_file(
+            OAUTH_TOKEN_FILE, SCOPES
+        )
+
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                OAUTH_CLIENT_SECRET_FILE,
+                SCOPES,
+            )
+            creds = flow.run_local_server(port=0)
+
+        with open(OAUTH_TOKEN_FILE, "w") as token:
+            token.write(creds.to_json())
+
+    return creds
+
+
 
 @lru_cache(maxsize=1)
 def get_services(credentials_file: str = SERVICE_ACCOUNT_FILE):
-    """Lazily create and cache Slides/Drive service clients."""
-    credentials = service_account.Credentials.from_service_account_file(
-        credentials_file, scopes=SCOPES
-    )
+    """Create Slides & Drive clients using OAuth or Service Account."""
+
+    if USE_OAUTH:
+        logger.info("🔐 Using OAuth 2.0 user credentials")
+        credentials = get_oauth_credentials()
+    else:
+        logger.info("🔐 Using Service Account credentials")
+        credentials = service_account.Credentials.from_service_account_file(
+            credentials_file, scopes=SCOPES
+        )
+
     slides = build("slides", "v1", credentials=credentials)
     drive = build("drive", "v3", credentials=credentials)
     return slides, drive
 
+# def get_services(credentials_file: str = SERVICE_ACCOUNT_FILE):
+#     """Lazily create and cache Slides/Drive service clients."""
+#     credentials = service_account.Credentials.from_service_account_file(
+#         credentials_file, scopes=SCOPES
+#     )
+#     slides = build("slides", "v1", credentials=credentials)
+#     drive = build("drive", "v3", credentials=credentials)
+#     return slides, drive
+
 # ---------- Helpers ----------
+
+
 def interpolate(template: str, data: dict) -> str:
     """Replace {{key}} occurrences with data[key] values (if present)."""
     if template is None:
@@ -898,7 +955,7 @@ def inspect_all_slides(
 
 # ---------- Main execution ----------
 if __name__ == "__main__":
-    PRESENTATION_ID = "1smmN1_gySaIeIFBNicYgqQbN-_gwcd8F7MgQ9LKvr5E"
+    PRESENTATION_ID = "here"
     
     all_inspections = inspect_all_slides(PRESENTATION_ID)
 
