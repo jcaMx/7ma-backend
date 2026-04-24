@@ -1,0 +1,84 @@
+{
+  "prospect_info": {
+    "name": "Charles Hollins",
+    "title": "Founder",
+    "company": "Digital Mixology",
+    "company_website": "digitalmixology.com",
+    "linkedin_url": "https://www.linkedin.com/in/charleshollins/"
+  },
+  "profile_enrichment": {
+    "full_name": "charles hollins",
+    "linkedin_url": "linkedin.com/in/charleshollins",
+    "industry": "online media",
+    "skills": [
+      "a/b testing",
+      "agile methodologies",
+      "analytics",
+      "cms",
+      "content management systems",
+      "content strategy",
+      "course development",
+      "course management systems",
+      "creative direction",
+      "digital entertainment"
+    ],
+    "experience": [
+      {
+        "title": {
+          "class": "research_and_development",
+          "levels": [],
+          "name": "founder & lead ai consultant",
+          "role": "engineering",
+          "sub_role": "data_science"
+        },
+        "company": {
+          "name": "digital mixology"
+        },
+        "start_date": "2022-12"
+      },
+      {
+        "title": {
+          "class": "services",
+          "levels": [],
+          "name": "snowboard coach",
+          "role": "health",
+          "sub_role": "fitness"
+        },
+        "company": {
+          "name": "blue angels youth ski and snowboard program"
+        },
+        "start_date": "2021-01",
+        "end_date": "2023-03"
+      },
+      {
+        "title": {
+          "class": null,
+          "levels": [],
+          "name": "ski and snowboard instructor",
+          "role": null,
+          "sub_role": null
+        },
+        "company": {
+          "name": "mammoth mountain"
+        },
+        "start_date": "2017-04",
+        "end_date": "2017-07"
+      },
+      {
+        "title": {
+          "class": "research_and_development",
+          "levels": [],
+          "name": "product manager",
+          "role": "product",
+          "sub_role": "product_management"
+        },
+        "company": {
+          "name": "vendasta matchcraft"
+        },
+        "start_date": "2014-03",
+        "end_date": "2016-09"
+      }
+    ]
+  },
+  "summary_text": "Charles Hollins is the founder and lead AI consultant at Digital Mixology, a company based in Los Angeles, California, that specializes in online media. With a strong background in digital strategy, content management, and analytics, Hollins leverages his expertise to enhance digital entertainment and e-learning experiences. His extensive skill set includes A/B testing, agile methodologies, and user experience design, which are crucial in the rapidly evolving online media landscape. Notably, the online media industry is increasingly focusing on integrating AI technologies to optimize content delivery and user engagement, positioning companies like Digital Mixology at the forefront of this transformation."
+}

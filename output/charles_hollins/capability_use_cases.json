@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Inform",
+    "name": "Trend Analysis for Digital Media",
+    "scenario": "Ethan needs to stay ahead of emerging trends in digital media to keep his company competitive. He's particularly interested in the latest AI-driven interactive technologies.",
+    "solution": "Ethan inputs his interest areas into the AI assistant, which then scans multiple data sources to provide a comprehensive report on current and upcoming trends in digital media, focusing on AI applications."
+  },
+  {
+    "capability": "Create & Edit",
+    "name": "Optimizing User Interaction Scripts",
+    "scenario": "Ethan is revising user interaction models to enhance engagement on a new educational platform. He needs to draft engaging scripts that are adaptive to user responses.",
+    "solution": "Ethan provides initial script drafts and user response data. The AI assistant refines these scripts, making them more dynamic and responsive to different user interaction patterns."
+  },
+  {
+    "capability": "Organize",
+    "name": "Streamlining Project Information",
+    "scenario": "Ethan is overwhelmed with data from multiple projects. He needs to organize this information to present to stakeholders.",
+    "solution": "Ethan uploads his project notes. The AI assistant categorizes and structures the information into a clear, concise dashboard that Ethan can easily share during stakeholder meetings."
+  },
+  {
+    "capability": "Transform",
+    "name": "Adapting Content for Global Markets",
+    "scenario": "Ethan's team is launching a digital learning tool in multiple languages. He needs to ensure the content is culturally and linguistically adapted.",
+    "solution": "Ethan provides the original content. The AI assistant translates and adjusts the material to fit cultural nuances, ensuring relevance and accessibility in different global markets."
+  },
+  {
+    "capability": "Analyze",
+    "name": "Enhancing User Engagement Analytics",
+    "scenario": "Ethan wants to understand why certain features of their platforms perform better than others to guide future developments.",
+    "solution": "Ethan inputs user interaction data into the AI assistant, which analyzes it to identify patterns and preferences, providing insights that help refine user engagement strategies."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "name": "Simulating Customer Interactions",
+    "scenario": "Ethan is developing a new feature and needs to predict how users might interact with it.",
+    "solution": "Ethan describes the feature to the AI assistant, which simulates different user interactions, providing feedback on potential user responses and areas for improvement."
+  },
+  {
+    "capability": "Explore & Guide",
+    "name": "Strategic Planning for AI Integration",
+    "scenario": "Ethan is planning the next phase of AI integration across platforms but needs to identify potential obstacles and opportunities.",
+    "solution": "Ethan outlines his current AI usage. The AI assistant suggests strategic options, potential challenges, and a step-by-step action plan for effective integration."
+  }
+]

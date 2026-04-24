@@ -1,0 +1,110 @@
+{
+  "name": "Bryl Lim",
+  "email": "bryl.lim@local.invalid",
+  "title": "Principal AI Engineer",
+  "company": "Standard Chartered",
+  "gender": "",
+  "bio": "Bryl Lim is a Principal AI Engineer at Standard Chartered, a major banking institution headquartered in London, England. In this role, he focuses on leveraging artificial intelligence solutions to enhance the bank's operations and services. Standard Chartered is known for its global presence and commitment to innovation in the banking sector, particularly in integrating advanced technologies like AI and cloud computing to optimize processes and improve customer experiences. Bryl's extensive skill set includes expertise in software development, cloud computing, and agile methodologies, positioning him as a key player in the evolving landscape of banking technology. His previous experience includes roles at Cambridge University Press & Assessment and various IT companies, highlighting his strong background in both finance and technology.",
+  "notes": "Prospect: Bryl Lim\n\nTitle: Principal AI Engineer\n\nCompany: Standard Chartered\n\nIndustry: banking\n\nLocation: N/A\n\nLinkedIn: linkedin.com/in/bryllim\n\nCompany website: sc.com\n\nTop skills: adobe illustrator, adobe photoshop, adobe premiere pro, agile methodologies, ai solutions, amazon web services, angularjs, artificial intelligence, azure devops server, back end web development\n\nExperience:\nprincipal ai engineer - standard chartered - 2025-08 to Present\nai ops engineer - cambridge university press & assessment - 2025-02 to 2025-08\nsenior full stack developer - cambridge university press & assessment - 2024-07 to 2025-02\nsoftware engineering lead - pocketdevs - 2022-01 to 2024-07\n\nEducation:\nbachelors - university of san carlos",
+  "linkedin_url": "linkedin.com/in/bryllim",
+  "company_website": "sc.com",
+  "source_result": {
+    "prospect_info": {
+      "name": "Bryl Lim",
+      "title": "Principal AI Engineer",
+      "company": "Standard Chartered",
+      "company_website": "sc.com",
+      "linkedin_url": "https://www.linkedin.com/in/bryllim/"
+    },
+    "profile_enrichment": {
+      "full_name": "bryl lim",
+      "linkedin_url": "linkedin.com/in/bryllim",
+      "industry": "banking",
+      "skills": [
+        "adobe illustrator",
+        "adobe photoshop",
+        "adobe premiere pro",
+        "agile methodologies",
+        "ai solutions",
+        "amazon web services",
+        "angularjs",
+        "artificial intelligence",
+        "azure devops server",
+        "back end web development"
+      ],
+      "experience": [
+        {
+          "title": {
+            "class": "research_and_development",
+            "levels": [],
+            "name": "principal ai engineer",
+            "role": "engineering",
+            "sub_role": "data_science"
+          },
+          "company": {
+            "name": "standard chartered"
+          },
+          "start_date": "2025-08"
+        },
+        {
+          "title": {
+            "class": "research_and_development",
+            "levels": [],
+            "name": "ai ops engineer",
+            "role": "engineering",
+            "sub_role": "data_science"
+          },
+          "company": {
+            "name": "cambridge university press & assessment"
+          },
+          "start_date": "2025-02",
+          "end_date": "2025-08"
+        },
+        {
+          "title": {
+            "class": "research_and_development",
+            "levels": [
+              "senior"
+            ],
+            "name": "senior full stack developer",
+            "role": "engineering",
+            "sub_role": "web"
+          },
+          "company": {
+            "name": "cambridge university press & assessment"
+          },
+          "start_date": "2024-07",
+          "end_date": "2025-02"
+        },
+        {
+          "title": {
+            "class": "research_and_development",
+            "levels": [
+              "manager"
+            ],
+            "name": "software engineering lead",
+            "role": "engineering",
+            "sub_role": "software"
+          },
+          "company": {
+            "name": "pocketdevs"
+          },
+          "start_date": "2022-01",
+          "end_date": "2024-07"
+        }
+      ],
+      "education": [
+        {
+          "school": {
+            "name": "university of san carlos"
+          },
+          "degrees": [
+            "bachelors"
+          ]
+        }
+      ]
+    },
+    "summary_text": "Bryl Lim is a Principal AI Engineer at Standard Chartered, a major banking institution headquartered in London, England. In this role, he focuses on leveraging artificial intelligence solutions to enhance the bank's operations and services. Standard Chartered is known for its global presence and commitment to innovation in the banking sector, particularly in integrating advanced technologies like AI and cloud computing to optimize processes and improve customer experiences. Bryl's extensive skill set includes expertise in software development, cloud computing, and agile methodologies, positioning him as a key player in the evolving landscape of banking technology. His previous experience includes roles at Cambridge University Press & Assessment and various IT companies, highlighting his strong background in both finance and technology."
+  },
+  "folder_path": "bryl_lim"
+}

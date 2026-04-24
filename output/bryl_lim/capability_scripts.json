@@ -1,0 +1,37 @@
+[
+  {
+    "capability": "Inform",
+    "tagline": "Stay Informed, Stay Ahead",
+    "script": "Imagine you're preparing for a crucial strategy meeting and you need the latest insights on market trends. With the 'Inform' capability of our AI assistant, you can quickly gather and summarize the most relevant information. Whether it's comparing financial products, researching emerging markets, or staying updated on regulatory changes, this tool ensures you're always well-prepared. With this capability, reclaim valuable time and focus on making strategic decisions that matter."
+  },
+  {
+    "capability": "Create & Edit",
+    "tagline": "Craft and Refine with Ease",
+    "script": "Think about the last time you faced a tight deadline to draft a client proposal or needed a creative marketing approach. Our AI's 'Create & Edit' capability can help draft, refine, and perfect your documents and presentations, ensuring clarity and impact. From generating engaging content to revising emails for tone and clarity, this tool supports you at every step. Embrace the confidence of always delivering your best work efficiently."
+  },
+  {
+    "capability": "Organize",
+    "tagline": "Structure Brings Clarity",
+    "script": "Ever felt overwhelmed by the volume of information from a client meeting or a project brainstorming session? The 'Organize' capability of our AI assistant can transform chaotic notes into structured, actionable items. It categorizes information, creates clear outlines, and prepares comprehensive reports, helping you and your team stay on track. This capability not only streamlines workflows but also clears your mind to focus on strategic thinking."
+  },
+  {
+    "capability": "Transform",
+    "tagline": "Adapt and Overcome",
+    "script": "Picture needing to present a financial report to a global team, each member speaking a different language. The 'Transform' capability allows you to adapt content for diverse audiences, translate documents, and even reformat data to suit different platforms. It ensures your message is not just heard but understood across cultural and linguistic barriers. With this tool, enhance your global reach and foster better collaboration."
+  },
+  {
+    "capability": "Analyze",
+    "tagline": "Insights Drive Decisions",
+    "script": "Imagine you're evaluating potential investments or deciding between new banking technologies. The 'Analyze' capability helps you weigh pros and cons, compare options, and draw insights from complex data. It turns overwhelming information into clear, actionable advice, enabling informed decision-making. Let this tool empower you to make strategic choices with confidence and precision."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "tagline": "Engage and Empower",
+    "script": "Ever wondered how to train your team on customer interaction scenarios without real-world consequences? The 'Personify or Simulate' capability allows you to create realistic customer service simulations or role-play complex negotiations. It helps in training and development, ensuring your team is well-prepared for any challenge. This capability not only enhances skills but also builds confidence in your team's abilities."
+  },
+  {
+    "capability": "Explore & Guide",
+    "tagline": "Navigate Complexity with Ease",
+    "script": "Facing a complex project or navigating through uncharted business strategies can be daunting. The 'Explore & Guide' capability of our AI assistant helps map out strategies, suggest next steps, and brainstorm solutions. It acts as a strategic partner, guiding you through planning and execution phases, ensuring no detail is overlooked. With this tool, turn daunting tasks into manageable, successful projects."
+  }
+]

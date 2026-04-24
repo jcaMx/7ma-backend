@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Inform",
+    "name": "Stay Updated on Cyber Threats",
+    "scenario": "Alistair needs to ensure Global Trust Banking Corp remains ahead of potential cyber threats to maintain robust security. He requires real-time updates on emerging cyber threats relevant to the banking sector.",
+    "solution": "Alistair inputs keywords related to banking and cybersecurity into the AI assistant. The AI then continuously scans multiple sources, summarizing the latest threats and trends in cybersecurity, and delivers concise, actionable reports directly to him."
+  },
+  {
+    "capability": "Create & Edit",
+    "name": "Draft AI Integration Proposals",
+    "scenario": "Alistair is preparing a proposal for integrating a new AI system into the bank's existing infrastructure to enhance operational efficiency.",
+    "solution": "He provides the AI assistant with initial ideas and requirements. The AI helps by drafting a comprehensive proposal, including potential benefits, required resources, and a projected timeline, which Alistair can then refine and present to the board."
+  },
+  {
+    "capability": "Organize",
+    "name": "Streamline Meeting Outcomes",
+    "scenario": "After a lengthy strategy meeting with various department heads, Alistair needs to consolidate the discussion into clear action items and responsibilities.",
+    "solution": "He inputs the meeting transcript into the AI assistant, which organizes the content into a structured summary with key points, decisions made, and assigned tasks, making follow-up easier and more efficient."
+  },
+  {
+    "capability": "Transform",
+    "name": "Localize Software Documentation",
+    "scenario": "Global Trust is expanding its services to non-English speaking countries, requiring existing technical documentation to be translated and adapted for local markets.",
+    "solution": "Alistair provides the original documents to the AI, which translates and adapts the content into the target languages while ensuring that technical terms are accurately conveyed."
+  },
+  {
+    "capability": "Analyze",
+    "name": "Evaluate AI Project Success",
+    "scenario": "Alistair wants to assess the impact of recently implemented AI projects on the bank's operational efficiency and customer satisfaction.",
+    "solution": "He feeds project data and customer feedback into the AI assistant. The AI analyzes the data, identifies key performance indicators, and generates a report highlighting successes and areas for improvement."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "name": "Simulate Customer Interaction",
+    "scenario": "To improve customer service, Alistair considers training sessions using simulated interactions based on typical customer queries and complaints.",
+    "solution": "He provides scenarios and customer profiles to the AI, which creates realistic dialogues. These simulations are used to train customer service staff, enhancing their response strategies and empathy."
+  },
+  {
+    "capability": "Explore & Guide",
+    "name": "Strategize New Tech Adoption",
+    "scenario": "Alistair is tasked with exploring new technologies to further enhance the bank's services. He needs to understand potential impacts and plan integration strategies.",
+    "solution": "He outlines his goals to the AI assistant, which generates a detailed analysis of emerging technologies, suggests feasible options, and drafts an action plan for pilot testing and eventual rollout."
+  }
+]
