@@ -1,6 +1,10 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+import io
+import os
 import threading, uuid
+import zipfile
+
+from flask import Flask, Response, jsonify, request
+from flask_cors import CORS
 from services.jobs import jobs, jobs_lock
 from services.pipeline import run_full_pipeline
 
@@ -33,7 +37,8 @@ def create_presentation():
         jobs[request_id] = {
             "status": "processing",
             "slides_url": None,
-            "error": None
+            "error": None,
+            "audio_dir": None,
         }
 
     def run():
@@ -60,8 +65,40 @@ def get_status(request_id):
 
     return jsonify({
         "status": job["status"],
-        "slides_url": job.get("slides_url")
+        "slides_url": job.get("slides_url"),
+        "audio_download_url": f"/api/presentation/{request_id}/audio.zip" if job.get("audio_dir") else None,
+        "error": job.get("error"),
     })
+
+
+@app.get("/api/presentation/<request_id>/audio.zip")
+def download_audio_zip(request_id):
+    job = jobs.get(request_id)
+    if not job:
+        return jsonify({"error": "Presentation not found"}), 404
+
+    audio_dir = job.get("audio_dir")
+    if not audio_dir or not os.path.isdir(audio_dir):
+        return jsonify({"error": "Audio files not available"}), 404
+
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as archive:
+        for filename in os.listdir(audio_dir):
+            filepath = os.path.join(audio_dir, filename)
+            if os.path.isfile(filepath):
+                archive.write(filepath, arcname=filename)
+
+    if buffer.tell() == 0:
+        return jsonify({"error": "Audio files not available"}), 404
+
+    buffer.seek(0)
+    return Response(
+        buffer.getvalue(),
+        mimetype="application/zip",
+        headers={
+            "Content-Disposition": f'attachment; filename=\"{request_id}_audio_files.zip\"'
+        },
+    )
 
 
 if __name__ == "__main__":

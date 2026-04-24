@@ -1,3 +1,4 @@
+import json
 import time
 import traceback
 from services.jobs import jobs, jobs_lock
@@ -44,29 +45,28 @@ def run_full_pipeline(request_id: str, payload: dict):
         output_dir = os.path.join("output", safe_name)
         os.makedirs(output_dir, exist_ok=True)
 
-        #Prepare path BEFORE TTS
+        # Prepare paths before TTS generation.
         capability_json_path = os.path.join(output_dir, "capability_scripts.json")
+        audio_dir = os.path.join(output_dir, "audio_files")
 
         
 
         # Step 2: Generate audio files if capability_scripts exist
-        # if result.get("capability_scripts"):
-        #     try:
-        #         import json
+        if result.get("capability_scripts"):
+            try:
+                # Save capability scripts
+                with open(capability_json_path, "w", encoding="utf-8") as f:
+                    json.dump(result["capability_scripts"], f, indent=2, ensure_ascii=False)
 
-        #         # Save capability scripts
-        #         with open(capability_json_path, "w", encoding="utf-8") as f:
-        #             json.dump(result["capability_scripts"], f, indent=2, ensure_ascii=False)
+                print("✅ Capability scripts saved to:", capability_json_path)
 
-        #         print("✅ Capability scripts saved to:", capability_json_path)
+                # 🔊 Generate TTS audio
+                generate_tts_audio_from_file(capability_json_path)
+                print("🔊 Audio generation completed")
 
-        #         # 🔊 Generate TTS audio
-        #         generate_tts_audio_from_file(capability_json_path)
-        #         print("🔊 Audio generation completed")
-
-        #     except Exception as audio_err:
-        #         print(f"[pipeline] Audio generation failed: {audio_err}")
-        #         traceback.print_exc()
+            except Exception as audio_err:
+                print(f"[pipeline] Audio generation failed: {audio_err}")
+                traceback.print_exc()
 
         presentation_id = payload.get("presentation_id") or os.getenv("PRESENTATION_ID")
         if not presentation_id:
@@ -94,6 +94,7 @@ def run_full_pipeline(request_id: str, payload: dict):
             jobs[request_id]["status"] = "completed"
             jobs[request_id]["slides_url"] = slides_url
             jobs[request_id]["email"] = payload.get("email")
+            jobs[request_id]["audio_dir"] = audio_dir if os.path.isdir(audio_dir) else None
 
         print("✅ Job status updated to:", jobs[request_id]["status"])
 
