@@ -27,7 +27,7 @@ slide_map = [
     },
     {
         "label": "fictional_profile",
-        "position": 4, #slide 4
+        "position": 3, #slide 3
         "source": "fictional_profile",
         "field_map": {0: "narrative", 1: "name", 2: "role"}
     },
@@ -791,53 +791,6 @@ def update_slides_prefetched(
     logger.info("Slides updated at %s", final_url)
     return final_url
 
-# ---------- Manual test block ----------
-# Uncomment to run a manual test of slide updates
-# if __name__ == "__main__":
-
-
-
-    # adjust output_dir to point to the folder with your JSON outputs
-    # try:
-    #     output_dir = "output/name"
-    #     audio_folder = os.path.join(output_dir, "audio_files")
-    #     fictional_path = os.path.join(output_dir, "fictional_profile.json")
-    #     capabilities_path = os.path.join(output_dir, "capability_use_cases.json")
-
-    #     if not os.path.exists(fictional_path) or not os.path.exists(capabilities_path):
-    #         logger.error("Required JSON outputs missing in %s", output_dir)
-    #         raise SystemExit(1)
-
-    #     with open(fictional_path, "r", encoding="utf-8") as f:
-    #         fictional_data = json.load(f)
-
-    #     with open(capabilities_path, "r", encoding="utf-8") as f:
-    #         capability_data = json.load(f)
-
-    #     # Normalize content_dict
-    #     content_dict = {
-    #         "fictional_profile": {
-    #             "name": fictional_data.get("name", ""),
-    #             "role": fictional_data.get("role", ""),
-    #             "narrative": fictional_data.get("narrative", "")
-    #         },
-    #         "capability_use_cases": capability_data
-    #     }
-    #     print("📦 content_dict keys:", content_dict.keys())
-
-    #     # Run updates (pass audio folder if you want audio files inserted)
-    #     audio_folder = os.path.join(output_dir, "audio_files")
-    #     demo_presentation_id = os.environ.get("PRESENTATION_ID", "")
-    #     if not demo_presentation_id:
-    #         raise SystemExit("Set PRESENTATION_ID env var to run the manual test block.")
-    #     update_slides(demo_presentation_id, slide_map, content_dict, audio_dir=audio_folder)
-
-    #     logger.info("All done.")
-
-    # except Exception as e:
-        # logger.error(f"❌ Slide update test failed: {e}")
-
-
 
 def inspect_slide_objects(presentation: dict, slide_index: int) -> dict:
     """
@@ -964,3 +917,51 @@ if __name__ == "__main__":
         json.dump(all_inspections, f, indent=2)
 
     print("\n✅ Inspection complete. Output saved to slide_inspection.json")
+
+
+
+# ---------- Manual test block ----------
+# Uncomment to run a manual test of slide updates
+# if __name__ == "__main__":
+
+
+
+    # adjust output_dir to point to the folder with your JSON outputs
+    # try:
+    #     output_dir = "output/name"
+    #     audio_folder = os.path.join(output_dir, "audio_files")
+    #     fictional_path = os.path.join(output_dir, "fictional_profile.json")
+    #     capabilities_path = os.path.join(output_dir, "capability_use_cases.json")
+
+    #     if not os.path.exists(fictional_path) or not os.path.exists(capabilities_path):
+    #         logger.error("Required JSON outputs missing in %s", output_dir)
+    #         raise SystemExit(1)
+
+    #     with open(fictional_path, "r", encoding="utf-8") as f:
+    #         fictional_data = json.load(f)
+
+    #     with open(capabilities_path, "r", encoding="utf-8") as f:
+    #         capability_data = json.load(f)
+
+    #     # Normalize content_dict
+    #     content_dict = {
+    #         "fictional_profile": {
+    #             "name": fictional_data.get("name", ""),
+    #             "role": fictional_data.get("role", ""),
+    #             "narrative": fictional_data.get("narrative", "")
+    #         },
+    #         "capability_use_cases": capability_data
+    #     }
+    #     print("📦 content_dict keys:", content_dict.keys())
+
+    #     # Run updates (pass audio folder if you want audio files inserted)
+    #     audio_folder = os.path.join(output_dir, "audio_files")
+    #     demo_presentation_id = os.environ.get("PRESENTATION_ID", "")
+    #     if not demo_presentation_id:
+    #         raise SystemExit("Set PRESENTATION_ID env var to run the manual test block.")
+    #     update_slides(demo_presentation_id, slide_map, content_dict, audio_dir=audio_folder)
+
+    #     logger.info("All done.")
+
+    # except Exception as e:
+        # logger.error(f"❌ Slide update test failed: {e}")
