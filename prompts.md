@@ -204,7 +204,8 @@ Output as a JSON object using the following structure:
   {audience_description}
 
 ----Instructions----  
-Use the context provided above to write a series of engaging 1-minute audio scripts written in second-person narrative perspective. Each script should introduce one of the AI capabilities described in the "AI Capability Model" found in the background section.
+
+Use the context provided above to write a series of engaging 1-minute audio scripts. Each script should introduce one of the AI capabilities described in the "AI Capability Model" found in the background section.
 
 These scripts will be converted to speech and incorporated into a slide deck aimed at helping prospective clients understand the exciting possibilities of AI—specifically how AI Assistants can support and enhance tasks relevant to their roles and workflows.
 
@@ -217,9 +218,10 @@ Each capability script should:
 6. Use a tone that is confident, approachable, and tailored to a business audience that may not have technical expertise.
 7. Stay within a 1-minute read time (roughly 120 words). Use short, clear sentences that flow naturally when spoken aloud.
 
-Guidelines:
-- Use vivid, concrete examples when illustrating tasks.
-- End with a forward-looking or benefit-oriented statement (e.g., “With this capability...reclaim valuable time and focus on higher-impact work.”)
+Optional but encouraged:
+* Use vivid, concrete examples when illustrating tasks.
+* End with a forward-looking or benefit-oriented statement (e.g., “With this capability...reclaim valuable time and focus on higher-impact work.”)
+
 
 ----Output----  
 Output as a JSON array using the following template:  
