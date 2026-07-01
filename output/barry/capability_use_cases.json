@@ -1,0 +1,44 @@
+[
+  {
+    "capability": "Inform",
+    "name": "Streamlining Client Inquiry Responses",
+    "scenario": "Martin faces a surge in client inquiries after a new product launch, leading to potential delays in response times and decreased customer satisfaction.",
+    "solution": "Martin inputs the most common questions and current product details into the AI. The AI then generates accurate, informative responses to client inquiries, ensuring timely and consistent communication."
+  },
+  {
+    "capability": "Create & Edit",
+    "name": "Enhancing Client Communication Templates",
+    "scenario": "Martin needs to update the email templates used for client communications to reflect new service enhancements.",
+    "solution": "Martin provides the AI with the old templates and details of the new services. The AI rewrites and refines these templates, making them current and more engaging for clients."
+  },
+  {
+    "capability": "Organize",
+    "name": "Categorizing Client Feedback",
+    "scenario": "After integrating new technology, Martin collects a vast amount of client feedback that needs to be organized for analysis.",
+    "solution": "Martin uploads the feedback to the AI, which categorizes it into themes like 'usability', 'performance', and 'support', making it easier for the team to address specific issues."
+  },
+  {
+    "capability": "Transform",
+    "name": "Localizing Service Communications",
+    "scenario": "Premier Client Solutions expands to non-English speaking markets, requiring translation of service materials.",
+    "solution": "Martin provides the original English communications to the AI, which translates them into multiple languages, maintaining the tone and clarity needed for effective customer service."
+  },
+  {
+    "capability": "Analyze",
+    "name": "Evaluating Client Service Strategies",
+    "scenario": "Martin needs to assess the effectiveness of newly implemented service strategies to decide on further investments.",
+    "solution": "Martin inputs service performance data into the AI, which analyzes trends and outcomes, providing insights on strategy effectiveness and areas for improvement."
+  },
+  {
+    "capability": "Personify or Simulate",
+    "name": "Role-playing for Service Training",
+    "scenario": "Martin wants to train new staff in handling difficult client interactions without the risk of real client dissatisfaction.",
+    "solution": "Martin sets up scenarios of challenging client cases in the AI, which simulates both client and service agent roles, allowing staff to practice and refine their responses in a controlled environment."
+  },
+  {
+    "capability": "Explore & Guide",
+    "name": "Strategizing Client Experience Improvements",
+    "scenario": "Martin plans to overhaul the client experience strategy to boost satisfaction and retention but needs a structured approach.",
+    "solution": "Martin outlines the current strategy to the AI, which then proposes a detailed roadmap with innovative solutions and actionable steps to enhance client interactions and satisfaction."
+  }
+]

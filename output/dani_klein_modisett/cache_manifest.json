@@ -1,0 +1,21 @@
+{
+  "cache_version": 1,
+  "updated_at": "2026-06-25T03:52:16.189858+00:00",
+  "request_id": "req_5d4c6271",
+  "output_dir": "C:\\Projects\\7ma-backend\\output\\dani_klein_modisett",
+  "folder_path": "dani_klein_modisett",
+  "runtime": {
+    "openai_api_key_detected": true,
+    "openai_client_initialized": true,
+    "openai_api_key_fingerprint": "sk-p...ecEA",
+    "model": "gpt-4-turbo",
+    "temperature": 0.2,
+    "output_folder": "C:\\Projects\\7ma-backend\\output\\dani_klein_modisett"
+  },
+  "content_input_hash": "b51e3ec75874e41cdc983d79c6476c3987d4d3006f26ab56c2ceced3ca9fd3cb",
+  "audio_input_hash": "860fb581618371b27c05a5ac49493d776f843016af64e84dfabfcc7f2f24ada2",
+  "slides_input_hash": "dbd9b7411a3a10b5c849fc536b2bb89876ba80a8103fe6d368566011a37c345f",
+  "deck_input_hash": "274696d9fb70671f28a3cbcffb2fb228038d28f73da00b470519f0d8a483487a",
+  "slides_url": "https://docs.google.com/presentation/d/1F5ZDGIm6TAYoXXuHaBI-E7hV7ONaEe8yO8-uRFQHA-Q/preview",
+  "presentation_copy_id": "1F5ZDGIm6TAYoXXuHaBI-E7hV7ONaEe8yO8-uRFQHA-Q"
+}

@@ -1,9 +1,10 @@
 import io
+import json
 import os
 import threading, uuid
 import zipfile
 
-from flask import Flask, Response, jsonify, request
+from flask import Flask, Response, jsonify, request, send_from_directory
 from flask_cors import CORS
 from services.jobs import jobs, jobs_lock
 from services.pipeline import run_full_pipeline
@@ -39,6 +40,8 @@ def create_presentation():
             "slides_url": None,
             "error": None,
             "audio_dir": None,
+            "output_dir": None,
+            "folder_path": None,
         }
 
     def run():
@@ -69,6 +72,42 @@ def get_status(request_id):
         "audio_download_url": f"/api/presentation/{request_id}/audio.zip" if job.get("audio_dir") else None,
         "error": job.get("error"),
     })
+
+
+@app.get("/api/presentation/<request_id>/deck")
+def get_deck(request_id):
+    job = jobs.get(request_id)
+    if not job:
+        return jsonify({"error": "Presentation not found"}), 404
+
+    output_dir = job.get("output_dir")
+    if not output_dir:
+        return jsonify({"error": "Deck not available yet"}), 404
+
+    combined_output_path = os.path.join(output_dir, "combined_output.json")
+    if not os.path.exists(combined_output_path):
+        return jsonify({"error": "Deck not available yet"}), 404
+
+    try:
+        with open(combined_output_path, "r", encoding="utf-8") as handle:
+            combined_output = json.load(handle)
+    except Exception as exc:
+        return jsonify({"error": f"Failed to load deck: {exc}"}), 500
+
+    return jsonify(combined_output)
+
+
+@app.get("/api/presentation/<request_id>/audio/<filename>")
+def get_audio_file(request_id, filename):
+    job = jobs.get(request_id)
+    if not job:
+        return jsonify({"error": "Presentation not found"}), 404
+
+    audio_dir = job.get("audio_dir")
+    if not audio_dir or not os.path.isdir(audio_dir):
+        return jsonify({"error": "Audio files not available"}), 404
+
+    return send_from_directory(audio_dir, filename)
 
 
 @app.get("/api/presentation/<request_id>/audio.zip")

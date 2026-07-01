@@ -1,0 +1,21 @@
+{
+  "cache_version": 1,
+  "updated_at": "2026-06-26T07:28:34.777735+00:00",
+  "request_id": "req_ac8ac120",
+  "output_dir": "C:\\Projects\\7ma-backend\\output\\charles_hollins",
+  "folder_path": "charles_hollins",
+  "runtime": {
+    "openai_api_key_detected": true,
+    "openai_client_initialized": true,
+    "openai_api_key_fingerprint": "sk-p...ecEA",
+    "model": "gpt-4-turbo",
+    "temperature": 0.2,
+    "output_folder": "C:\\Projects\\7ma-backend\\output\\charles_hollins"
+  },
+  "content_input_hash": "c151e425a39df736f21dbdc9336b2975ebc3a0f20cdf08e879cf893273c96b8b",
+  "audio_input_hash": null,
+  "slides_input_hash": "6b5b0aaddb9b7fa5259ef743c079e367e24dcacc17974b4f965a21fb7d92c731",
+  "deck_input_hash": "63228a3070077752da3a04bdc1a374cc73348bb757e4176d93ae28227ef62493",
+  "slides_url": "https://docs.google.com/presentation/d/1IIiLx0MtPzayk3hOXnkKBdyJsKFySTrXY6wPUIbHaj0/preview",
+  "presentation_copy_id": "1IIiLx0MtPzayk3hOXnkKBdyJsKFySTrXY6wPUIbHaj0"
+}
