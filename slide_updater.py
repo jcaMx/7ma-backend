@@ -183,11 +183,19 @@ def get_oauth_credentials():
 def get_services(credentials_file: str = SERVICE_ACCOUNT_FILE):
     """Create Slides & Drive clients using OAuth or Service Account."""
 
-    if USE_OAUTH:
-        logger.info("🔐 Using OAuth 2.0 user credentials")
+    use_oauth = os.getenv("GOOGLE_AUTH_MODE", "service_account").strip().lower() == "oauth"
+    logger.info(
+        "Auth mode resolved to %s (GOOGLE_AUTH_MODE=%r, credentials_file=%s)",
+        "oauth" if use_oauth else "service_account",
+        os.getenv("GOOGLE_AUTH_MODE"),
+        credentials_file,
+    )
+
+    if use_oauth:
+        logger.info("Using OAuth 2.0 user credentials")
         credentials = get_oauth_credentials()
     else:
-        logger.info("🔐 Using Service Account credentials")
+        logger.info("Using service account credentials")
         credentials = service_account.Credentials.from_service_account_file(
             credentials_file, scopes=SCOPES
         )

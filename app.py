@@ -1,9 +1,10 @@
 import io
+import json
 import os
 import threading, uuid
 import zipfile
 
-from flask import Flask, Response, jsonify, request
+from flask import Flask, Response, jsonify, request, send_from_directory
 from flask_cors import CORS
 from services.jobs import jobs, jobs_lock
 from services.pipeline import run_full_pipeline
@@ -39,6 +40,8 @@ def create_presentation():
             "slides_url": None,
             "error": None,
             "audio_dir": None,
+            "output_dir": None,
+            "folder_path": None,
         }
 
     def run():
@@ -69,6 +72,71 @@ def get_status(request_id):
         "audio_download_url": f"/api/presentation/{request_id}/audio.zip" if job.get("audio_dir") else None,
         "error": job.get("error"),
     })
+
+
+@app.get("/api/presentations")
+def get_presentations():
+    presentations = []
+    output_base = "output"
+    if os.path.exists(output_base):
+        for folder_name in os.listdir(output_base):
+            folder_path = os.path.join(output_base, folder_name)
+            if os.path.isdir(folder_path):
+                user_input_path = os.path.join(folder_path, "user_input.json")
+                if os.path.exists(user_input_path):
+                    try:
+                        with open(user_input_path, "r", encoding="utf-8") as f:
+                            user_input = json.load(f)
+                        presentations.append({
+                            "folder": folder_name,
+                            "name": user_input.get("name"),
+                            "company": user_input.get("company"),
+                            "title": user_input.get("title")
+                        })
+                    except Exception:
+                        pass
+    return jsonify({"presentations": presentations})
+
+
+@app.get("/api/presentation/<request_id>/deck")
+def get_deck(request_id):
+    job = jobs.get(request_id)
+    output_dir = None
+    if job:
+        output_dir = job.get("output_dir")
+    else:
+        # Fallback to checking if request_id is actually a folder name
+        possible_dir = os.path.join("output", request_id)
+        if os.path.exists(possible_dir) and os.path.isdir(possible_dir):
+            output_dir = possible_dir
+
+    if not output_dir:
+        return jsonify({"error": "Deck not available yet or not found"}), 404
+
+    combined_output_path = os.path.join(output_dir, "combined_output.json")
+    if not os.path.exists(combined_output_path):
+        return jsonify({"error": "Deck not available yet"}), 404
+
+    try:
+        with open(combined_output_path, "r", encoding="utf-8") as handle:
+            combined_output = json.load(handle)
+    except Exception as exc:
+        return jsonify({"error": f"Failed to load deck: {exc}"}), 500
+
+    return jsonify(combined_output)
+
+
+@app.get("/api/presentation/<request_id>/audio/<filename>")
+def get_audio_file(request_id, filename):
+    job = jobs.get(request_id)
+    if not job:
+        return jsonify({"error": "Presentation not found"}), 404
+
+    audio_dir = job.get("audio_dir")
+    if not audio_dir or not os.path.isdir(audio_dir):
+        return jsonify({"error": "Audio files not available"}), 404
+
+    return send_from_directory(audio_dir, filename)
 
 
 @app.get("/api/presentation/<request_id>/audio.zip")

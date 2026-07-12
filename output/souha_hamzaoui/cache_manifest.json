@@ -1,0 +1,21 @@
+{
+  "cache_version": 1,
+  "updated_at": "2026-07-06T04:46:26.999784+00:00",
+  "request_id": "req_4529ebfd",
+  "output_dir": "C:\\Projects\\7ma-backend\\output\\souha_hamzaoui",
+  "folder_path": "souha_hamzaoui",
+  "runtime": {
+    "openai_api_key_detected": true,
+    "openai_client_initialized": true,
+    "openai_api_key_fingerprint": "sk-p...ecEA",
+    "model": "gpt-4-turbo",
+    "temperature": 0.2,
+    "output_folder": "C:\\Projects\\7ma-backend\\output\\souha_hamzaoui"
+  },
+  "content_input_hash": "863357a8cb9025939b1d5761c69e0872a20593711bcf14f976c7c44d9c632646",
+  "audio_input_hash": null,
+  "slides_input_hash": "085091022e483cac51f2f84fa978085702ed903393ac73bea4938d0e145c43ea",
+  "deck_input_hash": "7013dbb771ea1aafc042deb08b05b9b44d13fbd67e803c45b217dfa20ee7d736",
+  "slides_url": "https://docs.google.com/presentation/d/18jowUpOG6iCyHiBbz9eFDIEssT2XvSVBSiVo8acn210/preview",
+  "presentation_copy_id": "18jowUpOG6iCyHiBbz9eFDIEssT2XvSVBSiVo8acn210"
+}

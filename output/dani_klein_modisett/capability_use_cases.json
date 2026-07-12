@@ -1,44 +1,44 @@
 [
   {
     "capability": "Inform",
-    "name": "Tailored Workshop Content",
-    "scenario": "Jordan needs to prepare a workshop for healthcare providers focusing on stress management techniques. The audience has diverse backgrounds and varying levels of experience with stress management.",
-    "solution": "Jordan provides the AI with details about the audience's demographics and their familiarity with stress management. The AI then gathers and summarizes relevant, up-to-date research and trends in stress management techniques suitable for the diverse group."
+    "name": "Tailored Leadership Trends Update",
+    "scenario": "Jordan needs to stay ahead of the latest leadership trends to effectively coach clients. However, keeping up with the vast amount of emerging information is time-consuming.",
+    "solution": "Jordan asks the AI to summarize the latest trends in leadership development. The AI provides a concise report, highlighting key trends and actionable insights, which Jordan uses to update training materials."
   },
   {
     "capability": "Create & Edit",
-    "name": "Engaging Workshop Scripts",
-    "scenario": "Jordan is planning an interactive seminar for corporate employees but struggles to create engaging content that resonates with professionals in a corporate setting.",
-    "solution": "Jordan inputs the seminar's theme and target audience into the AI. The AI assists by generating a draft script with humor and interactive elements designed to engage corporate professionals effectively."
+    "name": "Drafting Engaging Workshop Content",
+    "scenario": "Jordan is preparing for an upcoming workshop but struggles to find the time to create engaging and informative content.",
+    "solution": "Jordan provides the AI with workshop topics. The AI drafts detailed, engaging content for presentations and participant handouts, saving Jordan significant preparation time."
   },
   {
     "capability": "Organize",
     "name": "Streamlined Workshop Planning",
-    "scenario": "Jordan is overwhelmed with the logistics of organizing simultaneous workshops across different locations for university staff.",
-    "solution": "Jordan feeds the AI with details of each location and the workshop topics. The AI organizes this information into a clear, manageable schedule with timelines and resource allocation for each location."
+    "scenario": "Jordan is overwhelmed with the logistics of planning multiple workshops, each tailored to different leadership levels.",
+    "solution": "Jordan inputs the workshop details into the AI. It organizes the information into a clear schedule with categorized tasks and deadlines, simplifying Jordan's planning process."
   },
   {
     "capability": "Transform",
-    "name": "Customized Presentation Formats",
-    "scenario": "Jordan needs to adapt a single workshop's content to suit both in-person and virtual formats for an upcoming family group seminar.",
-    "solution": "Jordan provides the original content to the AI, specifying the two different delivery modes. The AI restructures the content, optimizing it for engaging virtual interaction and in-person delivery."
+    "name": "Customized Leadership Material Adaptation",
+    "scenario": "Jordan needs to adapt existing leadership development materials for a non-profit audience, which requires a different tone and approach.",
+    "solution": "Jordan provides the original materials to the AI, specifying the target audience. The AI adapts the content to be more suitable for non-profit leaders, ensuring relevance and engagement."
   },
   {
     "capability": "Analyze",
-    "name": "Impact Measurement Analysis",
-    "scenario": "After a series of workshops, Jordan wants to understand their effectiveness in boosting resilience among participants to improve future sessions.",
-    "solution": "Jordan inputs feedback and survey data from participants into the AI. The AI analyzes the data to identify patterns and provides insights on the workshops' impact, suggesting areas for improvement."
+    "name": "Evaluating Workshop Impact",
+    "scenario": "After a series of workshops, Jordan needs to evaluate their effectiveness to report back to stakeholders and plan future sessions.",
+    "solution": "Jordan feeds participant feedback into the AI. It analyzes the data, identifies key themes, and provides a summary of strengths and areas for improvement."
   },
   {
     "capability": "Personify or Simulate",
-    "name": "Role-play Scenario Development",
-    "scenario": "Jordan is designing a training module for emerging entrepreneurs that includes handling difficult customer interactions.",
-    "solution": "Jordan describes the training goal to the AI, which then creates realistic customer service scenarios and dialogues. These simulations help entrepreneurs practice and refine their communication skills."
+    "name": "Simulated Leadership Scenarios",
+    "scenario": "Jordan wants to provide personalized training experiences that include simulated interactions with industry leaders.",
+    "solution": "Jordan describes the desired scenarios to the AI. It generates realistic dialogues and role-play exercises, which Jordan uses to enhance the training's interactive component."
   },
   {
     "capability": "Explore & Guide",
-    "name": "Strategic Workshop Expansion",
-    "scenario": "Jordan is considering expanding workshop offerings to include more topics on personal development and needs a strategic plan.",
-    "solution": "Jordan outlines the current workshop themes to the AI. The AI proposes a strategic expansion plan, suggesting new topics and a roadmap for integrating them into the existing workshop portfolio."
+    "name": "Strategic Leadership Development Planning",
+    "scenario": "Jordan is tasked with developing a long-term leadership program for a corporate client but is unsure where to start.",
+    "solution": "Jordan outlines the client's goals to the AI. It suggests a strategic plan with phased goals, potential challenges, and a variety of leadership development activities tailored to the client's needs."
   }
 ]

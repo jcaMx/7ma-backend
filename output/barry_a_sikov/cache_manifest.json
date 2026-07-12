@@ -1,0 +1,21 @@
+{
+  "cache_version": 1,
+  "updated_at": "2026-06-21T14:00:33.104213+00:00",
+  "request_id": "req_e6910016",
+  "output_dir": "C:\\Projects\\7ma-backend\\output\\barry_a_sikov",
+  "folder_path": "barry_a_sikov",
+  "runtime": {
+    "openai_api_key_detected": true,
+    "openai_client_initialized": true,
+    "openai_api_key_fingerprint": "sk-p...ecEA",
+    "model": "gpt-4-turbo",
+    "temperature": 0.2,
+    "output_folder": "C:\\Projects\\7ma-backend\\output\\barry_a_sikov"
+  },
+  "content_input_hash": "fbedad5a9d278779af4f7455867d01267df1c0ffb5a7c8740d2d0755f5116922",
+  "audio_input_hash": "6c19521a2129a83ebdc3921492e4fbb607f953bb1457b9e0c482e2c8af20c7d2",
+  "slides_input_hash": "76e33f8cc8e871998e3dfce473f55edf3c056f120964ecc48c42300741fdc8cf",
+  "deck_input_hash": "d866bc516b379267b13acc61d2a12e1af2974d706d118462ef5905e42260e343",
+  "slides_url": "https://docs.google.com/presentation/d/1CCqQwgLAcBZCeRFR65YTGMvmCxrCA32yrAXa7LT4gQM/preview",
+  "presentation_copy_id": "1CCqQwgLAcBZCeRFR65YTGMvmCxrCA32yrAXa7LT4gQM"
+}
